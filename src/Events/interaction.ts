@@ -5,7 +5,7 @@ import { ExtendedInteraction } from "../Interfaces/Command";
 export const event: Event = {
     name: 'interactionCreate',
     run: async (client, interaction: Interaction) => {
-        if( interaction.isCommand()) {
+        if( interaction.isChatInputCommand()) {
             await interaction.deferReply();
             const command = client.commands.get(interaction.commandName);
             if(!command) {
